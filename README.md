@@ -14,11 +14,15 @@ Now create a virtual environment
 4.Now install django                                                                                                                                                               
 ->pip install django                                                                                                                                                                
 5.Install django rest framework                                                                                                                                                     
-->pip install djangorestframework                                                                                                                                                    
-6.create a project                                                                                                                                                                 
+->pip install djangorestframework                                                                                                                                                   
+
+6.You need to Install CORE to let others fetch from this host
+->pip install django-cors-headers
+
+7.create a project                                                                                                                                                                 
 ->django-admin startproject restapi                                                                                                                                                 
 Now replace my restapi folder with the created folder.                                                                                                                             
 
 Additional                                                                                                                                                                         
-7.pandas library was used to add data of a model 'City' from city.csv file                                                                                                         
+8.pandas library was used to add data of a model 'City' from city.csv file                                                                                                         
 ->pip install pandas
