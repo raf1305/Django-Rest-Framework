@@ -25,8 +25,8 @@ SECRET_KEY = '!s6y@nz-aihyn2vg^w)m6)5sx86*u^hj_6j_4@#4v^qie+on%y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
@@ -37,20 +37,32 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar',
     'rest_framework',
-    'city'
+    'city',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
 
+INTERNAL_IPS = [
+    '127.0.0.1',
+    'localhost'
+]
+
+DEBUG_TOOLBAR_CONFIG = {
+    'SHOW_COLLAPSED': True
+}
 ROOT_URLCONF = 'restapi.urls'
 
 TEMPLATES = [
